@@ -1,5 +1,5 @@
 {
-    "name": "Acosta.DataExcercise.Gameplay.Runtime",
+    "name": "Acosta.DataExcercise.DataSource.Runtime",
     "rootNamespace": "",
     "references": [],
     "includePlatforms": [],

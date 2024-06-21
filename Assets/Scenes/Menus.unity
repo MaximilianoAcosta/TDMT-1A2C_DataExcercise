@@ -176,7 +176,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 25
+  m_Spacing: 50
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
@@ -332,6 +332,7 @@ GameObject:
   - component: {fileID: 276492855}
   - component: {fileID: 276492854}
   - component: {fileID: 276492853}
+  - component: {fileID: 276492856}
   m_Layer: 0
   m_Name: Credits
   m_TagString: Untagged
@@ -422,6 +423,22 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &276492856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276492851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c417d90d4210a7f409b3183a72024564, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonPrefab: {fileID: 180012086740577713, guid: 82b876a2522e0e94981a788a4a292fbe, type: 3}
+  ids:
+  - Main Menu
+  buttonsParent: {fileID: 638507308}
 --- !u!1 &388480087
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,6 +451,7 @@ GameObject:
   - component: {fileID: 388480091}
   - component: {fileID: 388480090}
   - component: {fileID: 388480089}
+  - component: {fileID: 388480092}
   m_Layer: 0
   m_Name: MainMenu
   m_TagString: Untagged
@@ -524,6 +542,25 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &388480092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388480087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c417d90d4210a7f409b3183a72024564, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonPrefab: {fileID: 180012086740577713, guid: 82b876a2522e0e94981a788a4a292fbe, type: 3}
+  ids:
+  - Play
+  - Options
+  - Credits
+  - Exit
+  buttonsParent: {fileID: 930601871}
 --- !u!1 &638507307
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,7 +615,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 25
+  m_Spacing: 50
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
@@ -796,7 +833,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 25
+  m_Spacing: 50
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
@@ -1295,6 +1332,7 @@ GameObject:
   - component: {fileID: 1462274428}
   - component: {fileID: 1462274427}
   - component: {fileID: 1462274426}
+  - component: {fileID: 1462274429}
   m_Layer: 0
   m_Name: Options
   m_TagString: Untagged
@@ -1385,6 +1423,22 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1462274429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462274424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c417d90d4210a7f409b3183a72024564, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonPrefab: {fileID: 180012086740577713, guid: 82b876a2522e0e94981a788a4a292fbe, type: 3}
+  ids:
+  - Main Menu
+  buttonsParent: {fileID: 30434495}
 --- !u!1 &1491335514
 GameObject:
   m_ObjectHideFlags: 0
@@ -1394,6 +1448,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1491335515}
+  - component: {fileID: 1491335516}
   m_Layer: 0
   m_Name: Navigation
   m_TagString: Untagged
@@ -1419,6 +1474,29 @@ Transform:
   - {fileID: 276492852}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1491335516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491335514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b736073f922d8a498236f7321effab0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menusWithId:
+  - <ID>k__BackingField: {fileID: 11400000, guid: fdd3debf131dddf48b365dec6c673e7d, type: 2}
+    <Menu>k__BackingField: {fileID: 388480092}
+  - <ID>k__BackingField: {fileID: 11400000, guid: f7fb1a024c669b044a827ff8229611e3, type: 2}
+    <Menu>k__BackingField: {fileID: 1462274429}
+  - <ID>k__BackingField: {fileID: 11400000, guid: 39b49b3635d74714bb300b6087f78d59, type: 2}
+    <Menu>k__BackingField: {fileID: 276492856}
+  gameManagerDataSource: {fileID: 11400000, guid: c2d03ab7e73b25a4ab53c053ba7e5361, type: 2}
+  SourceOfIdsToTellGameManager:
+  - {fileID: 11400000, guid: 8b3ed21b940bf324a9882fd331e8f7b3, type: 2}
+  - {fileID: 11400000, guid: 61a73ac2a937eba4cbf7497952632da6, type: 2}
 --- !u!1 &2018697421
 GameObject:
   m_ObjectHideFlags: 0

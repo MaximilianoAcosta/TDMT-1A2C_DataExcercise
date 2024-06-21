@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Value:
     <SceneNames>k__BackingField:
-    - 4453
+    - World
+    - Level1

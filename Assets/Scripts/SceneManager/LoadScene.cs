@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class LoadScene : MonoBehaviour
 {
     [SerializeField] string sceneToLoad;
-    [SerializeField] SceneDataProvider SceneList;
+    [SerializeField] LevelDataSource SceneList;
     private List<string> Scenes;
     string SceneToActive;
     void Start()
