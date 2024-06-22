@@ -1,5 +1,5 @@
 
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.SearchService;
 using UnityEngine;
@@ -24,4 +24,4 @@ public class LoadScene : MonoBehaviour
         AsyncOperation loadOperation = SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
         yield return new WaitUntil(() => loadOperation.isDone);
     }
-}
+}*/

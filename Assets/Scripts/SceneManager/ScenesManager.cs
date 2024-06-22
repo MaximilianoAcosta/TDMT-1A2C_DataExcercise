@@ -1,14 +1,14 @@
-using Scenery;
-using System;
 using System.Collections;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class ScenesManager : MonoBehaviour
 {
     [SerializeField] private DataSource<ScenesManager> sceneryManagerDataSource;
     [SerializeField] private DataSource<Level> defaultLevelDataSource;
-   
+    [SerializeField] private LevelEventChannel LevelChange;
+    [SerializeField] private VoidEventChannel WinEvent;
+    [SerializeField] private VoidEventChannel LoseEvent;
+
     private Level _currentLevel;
     private void OnEnable()
     {
@@ -16,11 +16,12 @@ public class ScenesManager : MonoBehaviour
         {
             sceneryManagerDataSource.Value = this;
         }
-        Debug.Log(defaultLevelDataSource.Value.SceneNames.Count);
+        LevelChange.OnEventRaised += ChangeLevel;
+        WinEvent.OnEventRaised += UnloadCurrentLevel;
+        LoseEvent.OnEventRaised += UnloadCurrentLevel;
     }
     private void Start()
     {
-        
         StartCoroutine(LoadFirstLevel(defaultLevelDataSource.Value));
     }
   
@@ -37,9 +38,11 @@ public class ScenesManager : MonoBehaviour
     }
     private IEnumerator ChangeLevel(Level currentLevel, Level newLevel)
     {
-       
-        yield return Unload(currentLevel);
-        yield return new WaitForSeconds(2);
+
+        if (currentLevel != null) 
+        { 
+            yield return Unload(currentLevel); 
+        }
         yield return Load(newLevel);
         _currentLevel = newLevel;
        
@@ -52,8 +55,12 @@ public class ScenesManager : MonoBehaviour
             var loadOp = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
             yield return new WaitUntil(() => loadOp.isDone);
         }
-        _currentLevel = level;
        
+    }
+    private void UnloadCurrentLevel()
+    {
+        StartCoroutine(Unload(_currentLevel));
+        _currentLevel = null;
     }
 
     private IEnumerator Load(Level level)

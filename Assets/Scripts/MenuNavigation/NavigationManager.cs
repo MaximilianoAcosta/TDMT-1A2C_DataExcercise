@@ -5,15 +5,32 @@ using UnityEngine;
 
 public class NavigationManager : MonoBehaviour
 {
+
     [SerializeField] private List<MenuWithId> menusWithId;
     [SerializeField] private DataSource<GameManager> gameManagerDataSource;
     [SerializeField] private List<DataSource<string>> SourceOfIdsToTellGameManager;
     [SerializeField] private List<string> idsToTellGameManager;
-    private int _currentMenuIndex = 0;
+    [SerializeField] private VoidEventChannel WinEvent;
+    [SerializeField] private VoidEventChannel LoseEvent;
 
+
+    [SerializeField] private DataSource<string> WinID;
+    [SerializeField] private DataSource<string> LoseID;
+    private int _currentMenuIndex = 0;
+    private void OnEnable()
+    {
+        WinEvent.OnEventRaised += ShowWinMenu;
+        LoseEvent.OnEventRaised += ShowLoseMenu;
+       
+    }
+    private void OnDisable()
+    {
+        WinEvent.OnEventRaised -= ShowWinMenu;
+        LoseEvent.OnEventRaised -= ShowLoseMenu;
+    }
     private void Start()
     {
-        foreach(var source in SourceOfIdsToTellGameManager)
+        foreach (var source in SourceOfIdsToTellGameManager)
         {
             idsToTellGameManager.Add(source.Value);
         }
@@ -33,6 +50,7 @@ public class NavigationManager : MonoBehaviour
     {
         if (idsToTellGameManager.Contains(id) && gameManagerDataSource != null && gameManagerDataSource.Value != null)
         {
+            menusWithId[_currentMenuIndex].Menu.gameObject.SetActive(false);
             gameManagerDataSource.Value.HandleSpecialEvents(id);
         }
         for (var i = 0; i < menusWithId.Count; i++)
@@ -46,6 +64,15 @@ public class NavigationManager : MonoBehaviour
                 break;
             }
         }
+    }
+
+    public void ShowWinMenu()
+    {
+        HandleChangeMenu(WinID.Value);
+    }
+    public void ShowLoseMenu()
+    {
+        HandleChangeMenu(LoseID.Value);
     }
 
     [Serializable]

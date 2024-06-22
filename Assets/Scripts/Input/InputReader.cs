@@ -1,12 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class InputReader : MonoBehaviour
 {
     [SerializeField] private InputActionAsset inputActions;
+    [SerializeField] Vector2EventChannel MoveEvent;
+    [SerializeField] BoolEventChannel SprintEvent;
     [SerializeField] private string moveActionName = "Move";
     [SerializeField] private string runActionName = "Run";
 
@@ -28,18 +27,23 @@ public class InputReader : MonoBehaviour
 
     private void HandleRunInputStarted(InputAction.CallbackContext ctx)
     {
-        //TODO: Implement event logic
+        //DONE TODO: Implement event logic
+        SprintEvent.OnEventRaised?.Invoke(true);
         Debug.Log($"{name}: Run input started");
     }
 
     private void HandleRunInputCanceled(InputAction.CallbackContext ctx)
     {
-        //TODO: Implement event logic
+        //DONE TODO: Implement event logic
+        SprintEvent.OnEventRaised?.Invoke(false);
         Debug.Log($"{name}: Run input canceled");
     }
 
     private void HandleMoveInput(InputAction.CallbackContext ctx)
     {
-        //TODO: Implement event logic
+        //DONE TODO: Implement event logic
+
+        MoveEvent.OnEventRaised?.Invoke(ctx.ReadValue<Vector2>());
+
     }
 }

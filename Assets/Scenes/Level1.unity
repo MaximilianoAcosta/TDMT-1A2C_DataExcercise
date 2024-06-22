@@ -1079,7 +1079,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4756ed8a25c06794191bd2acfce96082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerReference: {fileID: 11400000, guid: 652362863d64b924ea5dbfb55fbe91f8, type: 2}
   levelStart: {fileID: 1517859829}
+  levelEnd: {fileID: 1023796119}
 --- !u!4 &1420981759
 Transform:
   m_ObjectHideFlags: 0
@@ -1244,6 +1246,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelEnd
       objectReference: {fileID: 0}
+    - target: {fileID: 8671151960176144338, guid: 6e1b7e3c385f49f4ca029d6f1e4237ab, type: 3}
+      propertyPath: WinEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 41dab73864eb6e449bec180cb6208a47, type: 2}
+    - target: {fileID: 8671151960176144338, guid: 6e1b7e3c385f49f4ca029d6f1e4237ab, type: 3}
+      propertyPath: ChangeLevel
+      value: 
+      objectReference: {fileID: 11400000, guid: c632703d3c96e704e958bbe88360c856, type: 2}
+    - target: {fileID: 8671151960176144338, guid: 6e1b7e3c385f49f4ca029d6f1e4237ab, type: 3}
+      propertyPath: LevelToChange
+      value: 
+      objectReference: {fileID: 11400000, guid: 1afd162360f237842a4d5181011e6965, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

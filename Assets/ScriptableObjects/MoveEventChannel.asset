@@ -9,10 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6b9d763b1693844b850908975e9eb51, type: 3}
-  m_Name: Level2
+  m_Script: {fileID: 11500000, guid: 3ff7abb5a78b53745a698e7ed468130f, type: 3}
+  m_Name: MoveEventChannel
   m_EditorClassIdentifier: 
-  _Value:
-    <SceneNames>k__BackingField:
-    - World
-    - Level2

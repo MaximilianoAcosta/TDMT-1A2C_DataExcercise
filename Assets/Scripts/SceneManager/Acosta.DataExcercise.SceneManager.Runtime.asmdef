@@ -2,7 +2,8 @@
     "name": "Acosta.DataExcercise.SceneManager.Runtime",
     "rootNamespace": "",
     "references": [
-        "GUID:a5c65ffa47280264893f1bc2de9e5075"
+        "GUID:a5c65ffa47280264893f1bc2de9e5075",
+        "GUID:37bd371d3da8f7a46a81abf004cd9c53"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

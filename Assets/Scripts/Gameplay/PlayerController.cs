@@ -1,16 +1,20 @@
 using Characters;
+using System.Diagnostics.Tracing;
 using UnityEngine;
-
 namespace Gameplay
 {
     [RequireComponent(typeof(Character))]
     public class PlayerController : MonoBehaviour
     {
+        [SerializeField] DataSource<PlayerController> PlayerReference;
+        [SerializeField] Vector2EventChannel MoveEvent;
+        [SerializeField] BoolEventChannel SprintEvent;
         private Character _character;
 
         private void Reset()
         {
             _character = GetComponent<Character>();
+            
         }
 
         private void Awake()
@@ -20,18 +24,25 @@ namespace Gameplay
             {
                 _character.enabled = false;
             }
+            PlayerReference.Value = this;
         }
 
         private void OnEnable()
         {
-            //TODO: Subscribe to inputs via event manager/event channel
-            //TODO: Set itself as player reference via ReferenceManager/DataSource
+            //DONE TODO: Subscribe to inputs via event manager/event channel
+            SprintEvent.OnEventRaised += HandleRun;
+            MoveEvent.OnEventRaised += HandleMove;
+            //DONE TODO: Set itself as player reference via ReferenceManager/DataSource
+            PlayerReference.Value = this;
         }
 
         private void OnDisable()
         {
-            //TODO: Unsubscribe from all inputs via event manager/event channel
-            //TODO: Remove itself as player reference via reference manager/dataSource
+            //DONE TODO: Unsubscribe from all inputs via event manager/event channel
+            SprintEvent.OnEventRaised -= HandleRun;
+            MoveEvent.OnEventRaised -= HandleMove;
+            //DONE TODO: Remove itself as player reference via reference manager/dataSource
+            PlayerReference.Value = null;
         }
 
         public void SetPlayerAtLevelStartAndEnable(Vector3 levelStartPosition)

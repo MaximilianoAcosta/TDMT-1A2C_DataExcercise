@@ -2,7 +2,8 @@
     "name": "Varela.DataExcercise.Input.Runtime",
     "rootNamespace": "",
     "references": [
-        "GUID:75469ad4d38634e559750d17036d5f7c"
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:37bd371d3da8f7a46a81abf004cd9c53"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

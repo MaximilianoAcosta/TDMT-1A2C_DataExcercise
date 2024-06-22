@@ -168,6 +168,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneryManagerDataSource: {fileID: 11400000, guid: 1e2869b6b3c42734e9779098907dcd4f, type: 2}
   defaultLevelDataSource: {fileID: 11400000, guid: 7cfd07d7db2273244af7770cc7c956f2, type: 2}
+  LevelChange: {fileID: 11400000, guid: c632703d3c96e704e958bbe88360c856, type: 2}
+  WinEvent: {fileID: 11400000, guid: 41dab73864eb6e449bec180cb6208a47, type: 2}
+  LoseEvent: {fileID: 11400000, guid: 3a9cd8031e491ff45922cd387c5dc19e, type: 2}
 --- !u!850595691 &621898172
 LightingSettings:
   m_ObjectHideFlags: 0

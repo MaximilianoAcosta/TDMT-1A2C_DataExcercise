@@ -267,6 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5c78c1a52f70a64b8597f523dfb71d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LoseEvent: {fileID: 0}
   speed: 2
   runningSpeed: 2
 --- !u!114 &1068601458
@@ -281,7 +282,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ac5b6628c20b7a498f0e1095a455512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDistance: 3
+  PlayerReference: {fileID: 11400000, guid: 652362863d64b924ea5dbfb55fbe91f8, type: 2}
+  attackDistance: 1
 --- !u!135 &1068601459
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1806,7 +1808,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4756ed8a25c06794191bd2acfce96082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerReference: {fileID: 11400000, guid: 652362863d64b924ea5dbfb55fbe91f8, type: 2}
   levelStart: {fileID: 1517859829}
+  levelEnd: {fileID: 1023796119}
 --- !u!4 &1420981759
 Transform:
   m_ObjectHideFlags: 0
@@ -1849,7 +1853,7 @@ Transform:
   m_GameObject: {fileID: 1517859828}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11, y: 0, z: 8.5}
+  m_LocalPosition: {x: -8.45, y: 0, z: -0.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1999,6 +2003,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelEnd
       objectReference: {fileID: 0}
+    - target: {fileID: 8671151960176144338, guid: 6e1b7e3c385f49f4ca029d6f1e4237ab, type: 3}
+      propertyPath: WinEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 41dab73864eb6e449bec180cb6208a47, type: 2}
+    - target: {fileID: 8671151960176144338, guid: 6e1b7e3c385f49f4ca029d6f1e4237ab, type: 3}
+      propertyPath: ChangeLevel
+      value: 
+      objectReference: {fileID: 11400000, guid: c632703d3c96e704e958bbe88360c856, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
