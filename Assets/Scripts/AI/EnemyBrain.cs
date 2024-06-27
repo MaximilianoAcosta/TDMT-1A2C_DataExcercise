@@ -9,7 +9,7 @@ namespace AI
     {
         [SerializeField] DataSource<PlayerController> PlayerReference;
         [SerializeField] private float attackDistance;
-        private ITarget _target;
+        //private ITarget _target;
         private ISteerable _steerable;
 
         private void Awake()
@@ -24,19 +24,18 @@ namespace AI
         private void Update()
         {
             //DONE TODO: Add logic to get the target from a source/reference system
-            if (_target == null )
+            if (PlayerReference.Value == null )
             {
-                _target = PlayerReference.Value.gameObject.GetComponent<ITarget>();
                 return;
             }
             //          AB        =         B        -          A
             //there is a bug here, has no impact in the gameplay but displays an error in console.
             // I tried adding multile null ckecks but it isnt fixed
-            var directionToTarget = _target.transform.position - transform.position;
+            var directionToTarget = PlayerReference.Value.transform.position - transform.position;
             var distanceToTarget = directionToTarget.magnitude;
-            if (distanceToTarget < attackDistance)
+            if (distanceToTarget < attackDistance && PlayerReference.Value.TryGetComponent(out ITarget target))
             {
-                _target.ReceiveAttack();
+                target.ReceiveAttack();
             }
             else
             {

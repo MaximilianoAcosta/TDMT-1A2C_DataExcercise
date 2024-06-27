@@ -77,8 +77,12 @@ public class ScenesManager : MonoBehaviour
     {
         foreach (var sceneName in level.SceneNames)
         {
-            var loadOp = SceneManager.UnloadSceneAsync(sceneName);
-            yield return new WaitUntil(() => loadOp.isDone);
+            if (SceneManager.GetSceneByName(sceneName).IsValid())
+            {
+                var loadOp = SceneManager.UnloadSceneAsync(sceneName);
+                yield return new WaitUntil(() => loadOp.isDone);
+
+            }
         }
     }
 
